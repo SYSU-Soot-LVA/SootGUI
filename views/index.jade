@@ -6,7 +6,13 @@ html
     // Optional theme
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin='anonymous')
     // Latest compiled and minified JavaScript
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css")
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/piexif.min.js" type="text/javascript")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js")
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" type="text/javascript")
   body
     nav.navbar.navbar-inverse.navbar-fixed-top
       .container
@@ -36,6 +42,19 @@ html
     .container
       // Example row of columns
       .row
-      
-      |         
+        .file-loading
+          input(id='input-h2',type='file', multiple='', accept="java")
+      .row.form-row
+          .form-group
+            label.control-label(for='classname') 待分析主类
+            input#classname.form-control(type='text', placeholder='请输入类名')
+          .form-group
+            label.control-label(for='methodname') 待分析方法
+            input#methodname.form-control(type='text', placeholder='空则默认分析全部方法')
+          .form-group
+            button.btn.btn-warning(id='sub-btn',type='button') 提交
+      .row
+          button.btn.btn-success(type='button') 获取CFG
+        
+
       script(src='/javascripts/index.js')
