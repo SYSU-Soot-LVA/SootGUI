@@ -43,7 +43,7 @@ html
       // Example row of columns
       .row
         .file-loading
-          input(id='input-h2',type='file', multiple='', accept="java")
+          input(id='input-h2',type='file', multiple='', accept="java" name='java')
       .row.form-row
           .form-group
             label.control-label(for='classname') 待分析主类
@@ -55,6 +55,9 @@ html
             button.btn.btn-warning(id='sub-btn',type='button') 提交
       .row
           button.btn.btn-success(type='button') 获取CFG
-        
+      .row
+          .panel.panel-default
+            .panel-heading
+            #result.panel-body
 
       script(src='/javascripts/index.js')
